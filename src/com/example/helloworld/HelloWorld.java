@@ -2,28 +2,23 @@ package com.example.helloworld;
 
 /**
  * Created by Damian on 8/28/2016.
+ * Example taken from http://alvinalexander.com/java/edu/pj/pj010005 on 9/1/2016
  */
 
-import java.io.Console;
+import java.util.Scanner;
 
 public class HelloWorld {
 
     public static void main(String[] args) {
 
-        Console c = System.console();
+        Scanner scanner = new Scanner(System.in);
 
-        if (c == null) {
-            System.err.println("No console.");
-            System.exit(1);
-        }
+        //  ask for the user's name
+        System.out.print("Enter your name: ");
 
-        String name = c.readLine("Enter your name: ");
+        // get their input as a String
+        String name = scanner.next();
 
-        printLine("Hello, " + name + "!"); 
-        System.out.println("Your request has been printed.");
-    }
-
-    private static void printLine(String s) {
-        System.out.println(s);
+        System.out.println("Hello, " + name + "!");
     }
 }
